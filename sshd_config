@@ -30,7 +30,7 @@ PermitRootLogin no
 #MaxSessions 10
 AllowUsers blackstrap-user
 
-#PubkeyAuthentication yes
+PubkeyAuthentication no
 
 # The default is to check both .ssh/authorized_keys and .ssh/authorized_keys2
 # but this is overridden so installations will only check .ssh/authorized_keys
@@ -50,11 +50,11 @@ AuthorizedKeysFile /etc/ssh/authorized_keys
 #IgnoreRhosts yes
 
 # To disable tunneled clear text passwords, change to no here!
-PasswordAuthentication no
-#PermitEmptyPasswords no
+PasswordAuthentication yes
+PermitEmptyPasswords yes
 
 # Change to no to disable s/key passwords
-#KbdInteractiveAuthentication yes
+KbdInteractiveAuthentication no
 
 # Kerberos options
 #KerberosAuthentication no
@@ -85,7 +85,7 @@ X11Forwarding no
 #X11DisplayOffset 10
 #X11UseLocalhost yes
 #PermitTTY yes
-#PrintMotd yes
+PrintMotd yes
 #PrintLastLog yes
 #TCPKeepAlive yes
 #PermitUserEnvironment no

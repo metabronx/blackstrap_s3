@@ -7,10 +7,11 @@
 # this the lockfile doesn't exist (first time only)
 if [[ ! -f /etc/ssh/lockfile ]]; then
     # append the ssh key
-    cat "/etc/ssh/host_pubkey" >> "/etc/ssh/authorized_keys"
+    # cat "/etc/ssh/host_pubkey" >> "/etc/ssh/authorized_keys"
     # generate our keys. we want to make sure these don't
     # get reset every time we stop and start the container
     ssh-keygen -A
+    touch /etc/ssh/lockfile
 fi
 
 # start sshd

@@ -15,12 +15,13 @@ RUN apk --no-cache add \
         libstdc++ \
         tini && \
     ## create ssh user
-    useradd -U -s /bin/bash -G users -d /home/blackstrap-user \
-        -p "$(< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c6)" \
-        blackstrap-user && \
+    useradd -U -s /bin/bash -d /home/blackstrap-user \
+      blackstrap-user && \
+    passwd -u -d blackstrap-user && \
     ## configure ssh
-    # mkdir -pm 700 /opt/ssh && \
-    (umask 177; touch /etc/ssh/authorized_keys) && \
+    ### in a real world circumstance, this line is a _very_ bad idea. but this
+    ### container will only ever run locally, so it doesn't really matter.
+    chmod 666 /etc/shadow && \
     chown -R blackstrap-user:blackstrap-user /etc/ssh && \
     # configure s3fs
     mkdir -p /opt/s3fs /home/blackstrap-user && \
@@ -30,6 +31,7 @@ RUN apk --no-cache add \
 
 USER blackstrap-user
 
+COPY ./motd.txt /etc/motd
 COPY ./sshd_config /etc/ssh/sshd_config
 COPY ./entrypoint.sh /entrypoint.sh
 COPY ./sshd.sh /sshd.sh
