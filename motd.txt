@@ -1,11 +1,11 @@
- ___   _               _          _                    
-(  _ \(_ )            ( )        ( )_                  
-| (_) )| |   _ _   ___| |/ )  ___|  _)_ __   _ _ _ _   
-|  _ ( | | / _  )/ ___)   ( /  __) | (  __)/ _  )  _ \ 
+ ___   _               _          _
+(  _ \(_ )            ( )        ( )_
+| (_) )| |   _ _   ___| |/ )  ___|  _)_ __   _ _ _ _
+|  _ ( | | / _  )/ ___)   ( /  __) | (  __)/ _  )  _ \
 | (_) )| |( (_| | (___| |\ \\__  \ |_| |  ( (_| | (_) )
-(____/(___)\__ _)\____)_) (_)____/\__)_)   \__ _)  __/ 
-                                                | |    
-                                                (_)    
+(____/(___)\__ _)\____)_) (_)____/\__)_)   \__ _)  __/
+                                                | |
+                                                (_)
 
 This container is running Blackstrap S3. You can connect
 to it via any SSH / SFTP client to interact with the
@@ -13,7 +13,7 @@ mounted S3 bucket.
 
 Note that due to the nature of having filesystem operations
 interoperate with the S3 protocol, some actions will take
-longer than others. This will be particularly noticeable
-when uploading large files and manipulating heavily
+longer than others. This may be particularly noticeable
+when uploading large files or manipulating heavily
 populated directories.
 

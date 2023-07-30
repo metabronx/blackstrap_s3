@@ -1,7 +1,7 @@
 #!/bin/bash
 
-
 # setup signal trap for graceful s3 disconnect
+# shellcheck source=/dev/null
 . trap.sh
 
 # this the lockfile doesn't exist (first time only)
