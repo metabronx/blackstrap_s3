@@ -1,0 +1,7 @@
+# ci
+.github
+.pre-commit-config.yaml
+
+# docs
+README.md
+docs
