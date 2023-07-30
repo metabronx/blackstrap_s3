@@ -41,9 +41,16 @@ Of course, since the intent of Blackstrap S3 is to expose S3 as if it _were_ a n
 
 At a fundamental level, the operations your computer uses to interact with files in a filesystem are not the same as the ones an S3 tool uses to interact with S3. This is a pretty simple mapping showing the differences:
 
-<p style="text-align:center;height:400px">
-    <img src="docs/image.png" alt="table illustrating the difference between POSIX and S3 calls" />
-</p>
+| POSIX            | S3             |
+|------------------|----------------|
+| read             | GetObject      |
+| write            | PutObject      |
+| unlink (delete)  | DeleteObject   |
+| readdir          | ListObjectsV2  |
+| rename           | CopyObject     |
+| chmod            | CopyObject     |
+| open             |                |
+| lseek            |                |
 
 This makes interacting with S3 tricky. If you want to use S3 as if it were a normal filesystem, software needs to interoperate kernel system calls with the S3 protocol.
 
