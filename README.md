@@ -4,7 +4,7 @@
 
 An S3 SFTP-enabled file system bridge.
 
-In conjunction with `sdcli`, Blackstrap S3 automatically configures a local SFTP-enabled S3 bridge for BLOB-based file management.
+In conjunction with [sdcli](https://github.com/metabronx/sdcli), Blackstrap S3 automatically configures a local SFTP-enabled S3 bridge for BLOB-based file management.
 
 The created container is intended to **only** be run locally, as the SSH configuration is highly insecure for the benefit of
 easier local access.

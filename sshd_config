@@ -87,12 +87,12 @@ X11Forwarding no
 #PermitTTY yes
 PrintMotd yes
 #PrintLastLog yes
-#TCPKeepAlive yes
+TCPKeepAlive no
 #PermitUserEnvironment no
-#Compression delayed
-#ClientAliveInterval 0
+Compression no
+ClientAliveInterval 50
 #ClientAliveCountMax 3
-#UseDNS no
+UseDNS no
 PidFile /etc/ssh/sshd.pid
 #MaxStartups 10:30:100
 #PermitTunnel no

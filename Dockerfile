@@ -6,10 +6,6 @@ LABEL org.opencontainers.image.authors="Elias Gabriel <me@eliasfgabriel.com>"
 LABEL org.opencontainers.image.source="https://github.com/metabronx/blackstrap_s3"
 # LABEL org.opencontainers.image.licenses="MIT"
 
-ENV AWS_S3_MOUNT=/home/blackstrap-user
-ENV AWS_S3_URL="https://s3.amazonaws.com"
-ENV AWS_S3_AUTHFILE="/opt/s3fs/passwd-s3fs"
-
 RUN apk upgrade && \
     apk --no-cache add \
         shadow \
